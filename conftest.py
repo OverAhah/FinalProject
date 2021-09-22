@@ -11,13 +11,13 @@ def browser(request):
     language = request.config.getoption("language")
     browser = None
     if language == "ru":
-        print("\nstart ru browser for test..")
+        print("\n\nstart ru browser for test..")
         browser = webdriver.Chrome()
     elif language == "en":
-        print("\nstart en browser for test..")
+        print("\n\nstart en browser for test..")
         browser = webdriver.Chrome()
     else:
         raise pytest.UsageError("--language should be ru or en")
     yield browser
-    print("\nquit browser..")
+    print("\n\nquit browser..")
     browser.quit()
